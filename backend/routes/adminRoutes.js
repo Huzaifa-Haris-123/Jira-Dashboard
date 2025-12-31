@@ -1,8 +1,11 @@
 import express from "express";
 import db from "../config/db.js";
+
 const router = express.Router();
+
 router.post("/login", (req, res) => {
   const { adminName, password } = req.body;
+
   const query = "SELECT * FROM admin WHERE adminName = ? AND password = ?";
   db.query(query, [adminName, password], (err, results) => {
     if (err) {

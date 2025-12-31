@@ -1,0 +1,331 @@
+/* AdminHomePage.css  (Dashboard-theme) */
+
+/* Optional: full width like your dashboard pages */
+body.pd-full .App,
+body.clm-full .App {
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* ===== Page ===== */
+.admin-page {
+  min-height: 100vh;
+  background: #f6f8fb;
+  font-family: Arial, sans-serif;
+  color: #0f172a;
+  padding: 0;
+}
+
+/* ===== Top Bar (same gradient as dashboard/project pages) ===== */
+.admin-topbar {
+  height: 64px;
+  display: grid;
+  grid-template-columns: 240px 1fr 180px;
+  align-items: center;
+  padding: 0 18px;
+  background: linear-gradient(90deg, #3b82f6 0%, #14b8a6 100%);
+  color: #fff;
+}
+
+.admin-topbar-title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+.admin-topbar-left,
+.admin-topbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.admin-topbar-right {
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Logout / icon button (dashboard style) */
+.admin-iconBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  font-size: 18px;
+}
+.admin-iconBtn:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* ===== Content wrapper ===== */
+.admin-content {
+  padding: 22px 40px 46px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Hero row like ProjectsPage */
+.admin-heroRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.admin-title {
+  margin: 0 0 6px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 34px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.admin-sub {
+  margin: 0;
+  color: #475569;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+/* Stat card */
+.admin-statCard {
+  width: 170px;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid #e6eaf2;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.06);
+  padding: 14px 16px;
+}
+
+.admin-statNum {
+  font-size: 28px;
+  font-weight: 900;
+  color: #0f172a;
+  line-height: 1;
+}
+
+.admin-statLbl {
+  margin-top: 6px;
+  color: #64748b;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+/* ===== Main card container ===== */
+.admin-card {
+  margin-top: 18px;
+  background: #ffffff;
+  border: 1px solid #e6eaf2;
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+  position: relative;
+}
+
+/* glow */
+.admin-card::after {
+  content: "";
+  position: absolute;
+  inset: -60px -60px auto auto;
+  width: 190px;
+  height: 190px;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(20, 184, 166, 0.18),
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+/* ✅ NEW: center area for ADD form (this is the main fix) */
+.admin-addCenter {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* section titles */
+.admin-section-title {
+  margin: 0 0 12px;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  color: #334155;
+}
+
+/* ✅ NEW: keep title aligned with centered form width */
+.admin-section-title.admin-centeredTitle {
+  width: min(560px, 100%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ===== Form ===== */
+.admin-form {
+  display: grid;
+  gap: 10px;
+  width: min(560px, 100%);     /* ✅ fixed width with responsive */
+  margin: 0 auto;             /* ✅ CENTER IT */
+  background: #ffffff;
+  border: 1px solid #e6eaf2;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
+  position: relative;
+  z-index: 1;                 /* keep above glow */
+}
+
+.admin-input {
+  height: 44px;
+  padding: 0 12px;
+  border-radius: 14px;
+  border: 1px solid #e6eaf2;
+  background: #f8fafc;
+  color: #0f172a;
+  outline: none;
+  font-weight: 800;
+  transition: border 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.admin-input::placeholder {
+  color: rgba(51, 65, 85, 0.6);
+  font-weight: 700;
+}
+
+.admin-input:focus {
+  background: #ffffff;
+  border-color: #93c5fd;
+  box-shadow: 0 0 0 4px rgba(147, 197, 253, 0.35);
+}
+
+/* ===== Buttons ===== */
+.admin-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  height: 44px;
+  padding: 0 16px;
+  border-radius: 14px;
+  border: none;
+
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+
+  color: #0b2a17;
+  background: linear-gradient(135deg, #22c55e 0%, #14b8a6 100%);
+  box-shadow: 0 10px 22px rgba(20, 184, 166, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+
+  transition: transform 140ms ease, box-shadow 140ms ease, filter 140ms ease;
+}
+
+.admin-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 32px rgba(20, 184, 166, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  filter: brightness(1.02);
+}
+
+.admin-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 18px rgba(20, 184, 166, 0.22),
+    inset 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+/* edit/delete */
+.admin-edit-btn {
+  padding: 9px 12px;
+  border-radius: 12px;
+  border: 1px solid #bfdbfe;
+  background: #ffffff;
+  color: #1d4ed8;
+  font-weight: 900;
+  cursor: pointer;
+  transition: transform 0.08s ease, box-shadow 0.14s ease;
+}
+.admin-edit-btn:hover {
+  box-shadow: 0 10px 22px rgba(29, 78, 216, 0.12);
+}
+.admin-edit-btn:active {
+  transform: translateY(1px);
+}
+
+/* ===== Divider ===== */
+.admin-divider {
+  margin: 18px 0;
+  border: none;
+  height: 1px;
+  background: #eef2f7;
+}
+
+/* ===== List ===== */
+.admin-list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.admin-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  background: #f8fafc;
+  border: 1px solid #e6eaf2;
+  border-radius: 14px;
+  padding: 12px 12px;
+}
+
+.admin-email {
+  font-weight: 900;
+  color: #0f172a;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 65%;
+}
+
+/* Empty */
+.admin-empty {
+  margin-top: 10px;
+  color: #64748b;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .admin-topbar {
+    grid-template-columns: 160px 1fr 120px;
+  }
+
+  .admin-content {
+    padding: 18px;
+  }
+
+  .admin-heroRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin-statCard {
+    width: 100%;
+  }
+
+  .admin-email {
+    max-width: 55%;
+  }
+}

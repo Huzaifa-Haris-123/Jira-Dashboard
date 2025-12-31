@@ -1,20 +1,20 @@
-const mysql = require('mysql');
+import mysql from "mysql";
 
 // Create MySQL connection
 const connection = mysql.createConnection({
-  host: 'localhost',       // XAMPP MySQL host
-  user: 'root',            // Default MySQL username
-  password: '',            // Default password (empty in XAMPP)
-  database: 'jira_management' // Your database name
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "jira_management",
 });
 
 // Connect to MySQL
 connection.connect((err) => {
   if (err) {
-    console.error('❌ Connection error:', err.stack);
+    console.error("❌ Connection error:", err.stack);
     return;
   }
-  console.log('✅ Connected to MySQL (XAMPP) Database');
+  console.log("✅ Connected to MySQL (XAMPP) Database");
 });
 
-module.exports = connection;
+export default connection;
